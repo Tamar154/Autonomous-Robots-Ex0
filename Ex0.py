@@ -1,7 +1,4 @@
 import sys, os, csv
-parent_directory = os.path.split(os.getcwd())[0]
-ephemeris_data_directory = os.path.join(parent_directory, 'data')
-sys.path.insert(0, parent_directory)
 from datetime import datetime, timezone, timedelta
 import pandas as pd
 import numpy as np
@@ -10,9 +7,9 @@ import navpy
 from gnssutils import EphemerisManager
 import simplekml
 
-# input_filepath = os.path.join('Fixed', 'gnss_log_2024_04_13_19_51_17.txt')
-# input_filepath = os.path.join('Driving', 'gnss_log_2024_04_13_19_53_33.txt')
-# input_filepath = os.path.join('Walking', 'gnss_log_2024_04_13_19_52_00.txt')
+parent_directory = os.path.split(os.getcwd())[0]
+ephemeris_data_directory = os.path.join(parent_directory, 'data')
+sys.path.insert(0, parent_directory)
 
 file_path = input("Enter the full path of the file: ")
 input_filepath = os.path.abspath(file_path)
